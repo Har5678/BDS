@@ -75,14 +75,14 @@ const CampusLife = () => {
           style={{ backgroundImage: `url(https://images.unsplash.com/photo-1562774053-701939374585?w=1200)` }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-          <h1 className="relative text-white text-3xl md:text-5xl font-bold text-center px-4">
+          <h1 className="relative text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center px-4">
             Campus Life at BDS School of Law
           </h1>
         </div>
 
         {/* Intro */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 text-center">
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-12 text-center">
+          <p className="text-gray-700 text-base sm:text-lg md:text-xl leading-relaxed">
             At BDS School of Law, our campus is meticulously designed to be a vibrant hub
             of learning, professionalism, and community. From dedicated spaces for practical
             training to areas for relaxation and collaboration, our campus provides the ideal
@@ -91,21 +91,23 @@ const CampusLife = () => {
         </div>
 
         {/* Flip Cards Grid */}
-        <div className="max-w-8xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="max-w-8xl mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {facilities.map((facility) => (
             <div
               key={facility.id}
-              className="group h-80"
+              className="h-80"
               style={{ perspective: "1000px" }}
             >
               <div
-                className="relative w-full h-full transition-transform duration-700 group-hover:rotate-y-180"
+                onClick={() => toggleFlip(facility.id)}
+                className={`relative w-full h-full transition-transform duration-700 ${flippedId === facility.id ? "rotate-y-180" : ""} lg:hover:rotate-y-180`}
                 style={{
                   transformStyle: "preserve-3d",
+                  cursor: "pointer",
                 }}
               >
-                {/* Front Side - Title with Background Image */}
-                <div 
+                {/* Front Side */}
+                <div
                   className="absolute w-full h-full rounded-xl shadow-lg overflow-hidden"
                   style={{ backfaceVisibility: "hidden" }}
                 >
@@ -115,26 +117,26 @@ const CampusLife = () => {
                       alt={facility.title}
                       className="w-full h-full object-cover opacity-30"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center p-6">
-                      <h3 className="text-2xl md:text-3xl font-semibold text-[#920C24] text-center">
+                    <div className="absolute inset-0 flex items-center justify-center p-4 md:p-6">
+                      <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-[#920C24] text-center">
                         {facility.title}
                       </h3>
                     </div>
                   </div>
                 </div>
 
-                {/* Back Side - Description */}
-                <div 
-                  className="absolute w-full h-full rounded-xl shadow-lg bg-white p-6 flex flex-col justify-center items-center text-center"
-                  style={{ 
+                {/* Back Side */}
+                <div
+                  className="absolute w-full h-full rounded-xl shadow-lg bg-white p-4 sm:p-6 flex flex-col justify-center items-center text-center"
+                  style={{
                     backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)"
+                    transform: "rotateY(180deg)",
                   }}
                 >
-                  <h3 className="text-xl md:text-2xl font-semibold text-[#920C24] mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#920C24] mb-2 sm:mb-3 md:mb-4">
                     {facility.title}
                   </h3>
-                  <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-base lg:text-base text-gray-700 leading-relaxed">
                     {facility.description}
                   </p>
                 </div>
@@ -153,6 +155,10 @@ const CampusLife = () => {
         
         h1, h2, h3, h4, h5, h6, li, p, a {
           font-family: 'Bookman Old Style', serif !important;
+        }
+
+        .rotate-y-180 {
+          transform: rotateY(180deg);
         }
       `}</style>
     </>

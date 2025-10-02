@@ -8,19 +8,19 @@ const AboutUsBanner = () => {
 
         {/* Left Side - Text */}
         <div className="w-full md:w-3/4 text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#920C24] mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#920C24] mb-4 sm:mb-6">
             BDS School of Law
           </h2>
 
-          <p className="text-gray-700 text-base sm:text-lg mb-4">
+          <p className="text-gray-700 text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
             Founded in 2003 in Meerut, BDS School of Law (BDSSL) has evolved into a premier centre for legal education. Affiliated with Chaudhary Charan Singh University and approved by the Bar Council of India, BDSSL nurtures future-ready legal professionals.
           </p>
 
-          <p className="text-[#920C24] font-bold text-base sm:text-lg mb-4">
+          <p className="text-[#920C24] font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4">
             Key highlights of BDSSL:
           </p>
 
-          <ul className="list-disc list-inside text-gray-700 text-base sm:text-lg space-y-2">
+          <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base md:text-lg space-y-1 sm:space-y-2">
             <li>Comprehensive programs: B.A. LL.B. (5 Years), LL.B. (3 Years), LL.M. (2 Years), Diploma in Cyber Law (1 Year)</li>
             <li>Experienced faculty mentoring students through lectures, discussions, and public speaking</li>
             <li>State-of-the-art campus with Moot Court Hall, Legal Aid Clinic, and Library</li>
@@ -35,12 +35,11 @@ const AboutUsBanner = () => {
           <img
             src={defaultImg}
             alt="About BDS School of Law"
-            className="w-full max-w-sm h-100 rounded-lg shadow-lg object-cover"
+            className="w-full max-w-xs sm:max-w-sm h-80 sm:h-96 rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
 
-      {/* Global styles: using standard <style> so this works with Vite + React (not Next.js's styled-jsx) */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap');
 

@@ -97,10 +97,10 @@ const Publication = () => {
             </div>
 
             <div className="bg-gray-100 px-2 py-2">
-                <div id="publications-content" className="max-w-6xl mx-auto px-6 py-12">
+                <div id="publications-content" className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
                     {/* Breadcrumb */}
-                    <nav className="mb-12 text-sm">
-                        <div className="flex items-center space-x-2 text-gray-600">
+                    <nav className="mb-8 sm:mb-12 text-sm">
+                        <div className="flex flex-wrap items-center space-x-2 text-gray-600">
                             <a href="#" className="text-red-600 hover:text-red-800 font-medium transition-colors">
                                 HOME
                             </a>
@@ -118,11 +118,12 @@ const Publication = () => {
                         {publications.map(publication => (
                             <div
                                 key={publication.id}
-                                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-8"
+                                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-6 sm:p-8"
                             >
-                                <div className="flex flex-col md:flex-row items-start gap-8">
+                                <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
+                                    {/* Icon / Thumbnail */}
                                     <div
-                                        className={`flex-shrink-0 w-48 h-48 rounded-xl flex items-center justify-center text-4xl shadow-md order-1 md:order-1 ${
+                                        className={`flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-xl flex items-center justify-center text-3xl sm:text-4xl shadow-md order-1 md:order-1 ${
                                             publication.type === 'cyber'
                                                 ? 'bg-gradient-to-br from-blue-600 to-blue-800'
                                                 : 'bg-gradient-to-br from-red-600 to-red-800'
@@ -134,16 +135,19 @@ const Publication = () => {
                                         </div>
                                     </div>
 
-                                    <div className="flex-1 space-y-4 order-2 md:order-2">
-                                        <h2 className="text-2xl font-semibold text-red-700 leading-tight">{publication.title}</h2>
+                                    {/* Content */}
+                                    <div className="flex-1 space-y-3 sm:space-y-4 order-2 md:order-2">
+                                        <h2 className="text-xl sm:text-2xl font-semibold text-red-700 leading-tight">
+                                            {publication.title}
+                                        </h2>
 
-                                        <p className="text-gray-600 leading-relaxed text-base">{publication.description}</p>
-                                        <p className="text-gray-500 italic">- {publication.Byline}</p>
+                                        <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{publication.description}</p>
+                                        <p className="text-gray-500 italic text-sm sm:text-base">- {publication.Byline}</p>
 
-                                        <div className="flex justify-end">
+                                        <div className="flex justify-start md:justify-end">
                                             <button
                                                 onClick={() => handleDownload(publication.id, publication.title)}
-                                                className="bg-transparent border border-red-700 text-red-700 font-medium px-6 py-3 rounded-4xl transition-all duration-200 hover:bg-red-700 hover:text-white hover:shadow-lg flex items-center space-x-2 group"
+                                                className="bg-transparent border border-red-700 text-red-700 font-medium px-4 sm:px-6 py-2 sm:py-3 rounded-3xl transition-all duration-200 hover:bg-red-700 hover:text-white hover:shadow-lg flex items-center space-x-2 group text-sm sm:text-base"
                                             >
                                                 <Download className="w-4 h-4 group-hover:animate-bounce" />
                                                 <span>Download</span>
@@ -157,7 +161,7 @@ const Publication = () => {
                 </div>
             </div>
             <style>
-        {`
+                {`
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap');
 
         * {
@@ -169,9 +173,8 @@ const Publication = () => {
         }
           `}
             </style>
-      </div>
+        </div>
     );
 };
 
 export default Publication;
- 
