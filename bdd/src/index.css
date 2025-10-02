@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+
+
+/* Hide scrollbar for all browsers */
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.4s ease-out forwards;
+}
