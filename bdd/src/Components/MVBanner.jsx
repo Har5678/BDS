@@ -67,11 +67,6 @@ const MVBanner = () => {
       <div className="absolute inset-0 bg-black/30" />
 
       {/* Centered Text */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white z-10">
-          Vision
-        </h3>
-      </div>
     </div>
   }
             back={
@@ -101,9 +96,6 @@ const MVBanner = () => {
 
       {/* Centered Text */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white z-10">
-          Mission
-        </h3>
       </div>
     </div>
   }

@@ -1,30 +1,31 @@
 // components/AdmissionInterview.jsx
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-void motion;
+import axios from "axios";
+import { toast } from "react-toastify";
+import { backendUrl } from "../App";
 
 const admissionProcess = [
   {
     title: "BALLB",
     content:
-      "To be eligible for this distinguished program, you must have successfully completed your 10+2 or an equivalent qualification from a recognized board."
+      "To be eligible for this distinguished program, you must have successfully completed your 10+2 or an equivalent qualification from a recognized board.",
   },
   {
     title: "LLB",
     content:
-      "To be eligible for this program, you must hold a Bachelor’s degree in any discipline from a recognized university."
+      "To be eligible for this program, you must hold a Bachelor’s degree in any discipline from a recognized university.",
   },
   {
     title: "LLM",
     content:
-      "Through entrance to be conducted by CCS University. To be eligible for this program, you must have an LL.B. degree from a recognized university."
+      "Through entrance to be conducted by CCS University. To be eligible for this program, you must have an LL.B. degree from a recognized university.",
   },
   {
     title: "Diploma in Cyber Law",
     content:
-      "You must have successfully completed your Graduation in any stream from a recognized University."
-  }
+      "You must have successfully completed your Graduation in any stream from a recognized University.",
+  },
 ];
 
 const personalInterview = {
@@ -33,13 +34,54 @@ const personalInterview = {
     "General Demeanor - Personality, Body Language Etc.",
     "Articulation and Communication",
     "Co-curricular, Extra-curricular accomplishments",
-    "Curricular / General / Common Legal Understanding"
-  ]
+    "Curricular / General / Common Legal Understanding",
+  ],
 };
 
 const AdmissionInterview = () => {
   const [activeTab, setActiveTab] = useState("admission");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // form states
+  const [form, setForm] = useState({
+    name: "",
+    fatherName: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+
+  // handle input change
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+     
+
+      const response = await axios.post(backendUrl+"/api/students/add",form);
+
+      if (response.data.success) {
+        toast.success("Registration successful!");
+        setIsModalOpen(false);
+        setForm({
+          name: "",
+          fatherName: "",
+          email: "",
+          phone: "",
+          address: "",
+        });
+      } else {
+        toast.error(response.data.message || "Something went wrong!");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to register. Please try again.");
+    }
+  };
 
   return (
     <>
@@ -147,32 +189,47 @@ const AdmissionInterview = () => {
                   Register for Personal Interview
                 </h2>
 
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <input
                     type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
                     placeholder="Full Name"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
                   />
                   <input
                     type="text"
+                    name="fatherName"
+                    value={form.fatherName}
+                    onChange={handleChange}
                     placeholder="Father's Name"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
                   />
                   <input
                     type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
                     placeholder="Email Address"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
                   />
                   <input
                     type="tel"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
                     placeholder="Phone Number"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     required
                   />
                   <textarea
+                    name="address"
+                    value={form.address}
+                    onChange={handleChange}
                     placeholder="Address"
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400"
                     rows={3}

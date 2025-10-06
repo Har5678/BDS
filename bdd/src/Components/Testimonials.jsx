@@ -4,28 +4,41 @@ import assets from "../assets/Assets";
 
 const testimonials = [
   {
-    name: "Alice Johnson",
-    title: "Software Engineer",
-    photo: assets.Flower1,
-    review: "This platform has transformed my learning experience. Highly recommended!"
+    name: "Amit Singh Bansiwala",
+    title: "LLB(2023-2025)",
+    photo: assets.Amit,
+    review:
+      "My three-year LL.B. journey at B.D.S. was transformative. Grateful to the faculty, management, and Principal Sir for shaping my legal knowledge, skills, and values — forever thankful.",
   },
   {
-    name: "Bob Smith",
-    title: "UI/UX Designer",
-    photo: assets.Flower2,
-    review: "Amazing mentors and an incredible environment for growth."
+    name: "Chiranjeev",
+    title: "LLB 5th Sem",
+    photo: assets.Chiranjeev,
+    review: "My LL.B. journey at B.D.S. was transformative. Thanks to the faculty and Principal Sir for shaping my knowledge and skills.",
   },
   {
-    name: "Charlie Lee",
-    title: "Entrepreneur",
-    photo: assets.Flower3,
-    review: "The insights I gained here helped me launch my startup successfully."
+    name: "Himanshi Shishodia",
+    title: "BALLB 7th Sem",
+    photo: assets.Himanshi,
+    review: "The faculty's passion and expertise inspire me daily. With supportive peers, excellent resources, and countless opportunities, this college shapes me into a skilled lawyer and a changemaker.",
   },
   {
-    name: "Dana White",
-    title: "Digital Marketer",
-    photo: assets.Flower4,
-    review: "Practical knowledge and supportive faculty made all the difference."
+    name: "Rishank",
+    title: "BALLB 3rd Sem",
+    photo: assets.Rishank,
+    review: "BDS School of Law stands out for its supportive faculty, motivating environment, and modern infrastructure. With a balance of academics, co-curricular activities, and strong student–teacher bonds, it ensures holistic development.",
+  },
+  {
+    name:"Roshni Chauhan",
+    title:"BALLB 9th Sem",
+    photo:assets.Roshini,
+    review:"My law college offers practical guidance and hands-on experience through professors, internships, moot courts, and legal projects, building confidence and professional skills."
+  },
+  {
+    name:"Shivani Louhan",
+    title:"BALLB 9th Sem",
+    photo:assets.Shivani,
+    review:"BDS School of Law isn’t just a place to study—it’s where I found my voice and purpose. The calm, focused environment and guiding faculty have shaped my journey as a legal scholar."
   }
 ];
 
@@ -44,15 +57,19 @@ const Testimonials = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center py-10 px-4 sm:px-6">
+    <div className="w-full flex flex-col items-center justify-center py-10 px-4 sm:px-6 overflow-hidden">
+      <h2 className="text-center text-2xl md:text-3xl font-semibold mb-6 text-gray-800">
+        What Our Students Say
+      </h2>
+
       {/* Carousel Wrapper */}
-      <div className="relative w-full max-w-4xl flex items-center justify-center overflow-hidden">
+      <div className="relative w-full max-w-5xl flex items-center justify-center overflow-hidden">
         {/* Cards */}
-        <div className="relative w-full h-[350px] flex items-center justify-center">
+        <div className="relative w-full h-[360px] flex items-center justify-center">
           {testimonials.map((t, index) => {
             let position;
             if (isMobile) {
-              position = index === current ? 0 : 1; // Only current visible
+              position = index === current ? 0 : 1;
             } else {
               position = index - current;
               if (position < 0) position += testimonials.length;
@@ -61,16 +78,22 @@ const Testimonials = () => {
             let styles = "absolute transition-all duration-500 ease-in-out";
 
             if (isMobile) {
-              styles += position === 0 ? " z-20 w-11/12 h-[320px] opacity-100 scale-100 translate-x-0" : " opacity-0 scale-90";
+              styles +=
+                position === 0
+                  ? " z-20 w-11/12 h-[320px] opacity-100 scale-100 translate-x-0"
+                  : " opacity-0 scale-90";
             } else {
               if (position === 0) {
-                styles += " z-20 w-[45%] h-[350px] opacity-100 scale-100 translate-x-0";
+                styles +=
+                  " z-20 w-[50%] h-[360px] opacity-100 scale-100 translate-x-0";
               } else if (position === 1) {
-                styles += " z-10 w-[35%] h-[300px] opacity-80 scale-90 translate-x-[65%]";
+                styles +=
+                  " z-10 w-[38%] h-[310px] opacity-80 scale-95 translate-x-[60%]";
               } else if (position === testimonials.length - 1) {
-                styles += " z-10 w-[35%] h-[300px] opacity-80 scale-90 -translate-x-[65%]";
+                styles +=
+                  " z-10 w-[38%] h-[310px] opacity-80 scale-95 -translate-x-[60%]";
               } else {
-                styles += " opacity-0 scale-75";
+                styles += " opacity-0 scale-80";
               }
             }
 
@@ -82,7 +105,7 @@ const Testimonials = () => {
                 <img
                   src={t.photo}
                   alt={t.name}
-                  className="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover mb-4"
+                  className="w-24 h-24 md:w-30 md:h-30 rounded-full mb-4"
                 />
                 <h3 className="text-lg md:text-xl font-bold text-gray-800">{t.name}</h3>
                 <p className="text-sm md:text-base text-gray-500 mb-2">{t.title}</p>
@@ -119,7 +142,9 @@ const Testimonials = () => {
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-3 h-3 rounded-full transition-all ${current === index ? "bg-[#920C24] scale-110" : "bg-gray-400"}`}
+            className={`w-3 h-3 rounded-full transition-all ${
+              current === index ? "bg-[#920C24] scale-110" : "bg-gray-400"
+            }`}
           />
         ))}
       </div>

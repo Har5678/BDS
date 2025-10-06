@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultImg from '../assets/campus.png';
+import assets from '../assets/Assets';
 
 const AboutUsBanner = () => {
   return (
@@ -31,11 +31,11 @@ const AboutUsBanner = () => {
         </div>
 
         {/* Right Side - Image */}
-        <div className="w-full md:w-1/4 flex justify-center md:justify-end">
+        <div className="w-full md:w-1/3 flex justify-center md:justify-end">
           <img
-            src={defaultImg}
+            src= {assets.aboutbds2}
             alt="About BDS School of Law"
-            className="w-full max-w-xs sm:max-w-sm h-80 sm:h-96 rounded-lg shadow-lg object-cover"
+            className="w-full max-w-sm sm:max-w-sm h-80 sm:h-96 rounded-lg shadow-lg object-fit"
           />
         </div>
       </div>

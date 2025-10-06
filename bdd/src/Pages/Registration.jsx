@@ -6,6 +6,7 @@ import Approvals from "../Components/Approvals";
 import AboutUsBanner from "../Components/AboutUsBanner";
 import RgBanner from "../Components/RgBanner";
 import Testimonials from "../Components/Testimonials";
+import assets from "../assets/Assets";
 
 const courses = ["BALLB", "LLB", "LLM", "Cyber Law"];
 
@@ -27,21 +28,25 @@ const RegistrationPage = () => {
       <CircleStats />
 
       {/* Why Choose BDS Section */}
-      <section className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
-          
-          {/* Left Image Placeholder */}
-          <motion.div
-            className="w-full lg:w-2/5 bg-white bg-opacity-10 rounded-2xl sm:rounded-3xl h-60 sm:h-80 lg:h-[400px] flex items-center justify-center shadow-md"
-            initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <span className="text-gray-400 text-sm sm:text-base md:text-lg">Image Placeholder</span>
-          </motion.div>
+        <section className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+            
+            {/* Left Image Placeholder */}
+            <motion.div
+          className="w-full lg:w-2/5 rounded-2xl sm:rounded-3xl h-60 sm:h-80 lg:h-[400px] flex items-center justify-center shadow-md overflow-hidden"
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+          <img
+            src={assets.whychoosebds}
+            alt="Why Choose BDS"
+            className="w-full h-full object-contain"
+          />
+            </motion.div>
 
-          {/* Right Text */}
+            {/* Right Text */}
           <motion.div
             className="w-full lg:w-3/5"
             initial={{ x: 100, opacity: 0 }}

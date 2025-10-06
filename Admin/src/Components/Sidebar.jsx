@@ -17,15 +17,15 @@ const Sidebar = () => {
             <img src={Assets.Order} alt="" />
             <p className='hidden md:block'>List News</p>
             </Link>
-            <Link to="/list" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
-            <img src={Assets.Order} alt="" />
+            <Link to="/add-gallery-images" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
+            <img src={Assets.Add} alt="" />
             <p className='hidden md:block'>Add Gallery Images</p>
             </Link>
-            <Link to="/list" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
+            <Link to="/gallery-list" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
             <img src={Assets.Order} alt="" />
             <p className='hidden md:block'>List Gallery</p>
             </Link>
-            <Link to="/list" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
+            <Link to="/students" className="flex items-center gap-3 border border-gray-300 border-r-0 px-3 py-2 rounded-l">
             <img src={Assets.Order} alt="" />
             <p className='hidden md:block'>List Students</p>
             </Link>

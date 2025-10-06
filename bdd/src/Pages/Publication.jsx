@@ -7,11 +7,11 @@ const Publication = () => {
         {
             id: 1,
             title:
-                "MAINSTREAMING ENVIRONMENTAL CRIMES: THE ROLE OF THE BNS AND BNSS IN INDIA’S GREEN JUSTICE",
+                "MAINSTREAMING ENVIRONMENTAL CRIMES: THE ROLE OF THE BNS AND BNSS IN INDIA'S GREEN JUSTICE",
             description:
-                "This publication explores how India’s new criminal laws—the Bharatiya Nyaya Sanhita (BNS)and the Bharatiya Nagarik Suraksha Sanhita (BNSS)—address environmental crimes. It highlights the role of these reforms in strengthening accountability, promoting green justice, and ensuring that environmental protection becomes a mainstream part of the justice system.",
+                "This publication explores how India's new criminal laws—the Bharatiya Nyaya Sanhita (BNS)and the Bharatiya Nagarik Suraksha Sanhita (BNSS)—address environmental crimes. It highlights the role of these reforms in strengthening accountability, promoting green justice, and ensuring that environmental protection becomes a mainstream part of the justice system.",
             Byline: 'Dr. Sourabh Sri Mala Asst. Prof., BDS School of Law, Meerut',
-            icon: '🔐',
+            image: assets.saurabhshrimala,
         },
         {
             id: 2,
@@ -19,25 +19,25 @@ const Publication = () => {
             description:
                 'This publication delves into the world of electronic contracts in the digital age, exploring how technology is reshaping the way agreements are formed and enforced. It outlines the legal implications of e-contracts, the challenges of authenticity and security, and the evolving role of law in safeguarding transparency and trust in online transactions. Readers will gain insights into the future of contracting in a fast-changing digital landscape.',
             Byline: 'Mr. Vivek Kumar Ass. Professor, BDS School of Law, Meerut',
-            icon: '⚖️',
+            image: assets.viveksir,
         },
         {
             id: 3,
             title:
                 'POSITION OF ENGLISH AS A PROFESSIONAL LINK LANGUAGE IN INDIA: A CRITICAL ANALYSIS',
             description:
-                "This publication critically examines the role of English as a professional link language in India. It explores how English functions as a bridge across diverse linguistic communities, its impact on education, employment, and governance, and the challenges it poses to regional languages. The analysis highlights both the opportunities and inequalities created by English in shaping India’s professional and social landscape.",
+                "This publication critically examines the role of English as a professional link language in India. It explores how English functions as a bridge across diverse linguistic communities, its impact on education, employment, and governance, and the challenges it poses to regional languages. The analysis highlights both the opportunities and inequalities created by English in shaping India's professional and social landscape.",
             Byline: 'Ms. Divya Jain Assistant Prof. (English Department)',
-            icon: '⚖️',
+            image: assets.divyamam,
         },
         {
             id: 4,
             title: 'Expanding Horizon of Article 21 Vis-a-Vis Judicial Activism',
             description:
-                'This publication provides a critical analysis of the evolving interpretation of Article 21 of the Indian Constitution in the context of judicial activism. It examines how the judiciary has progressively expanded the ambit of the “right to life and personal liberty” to encompass diverse dimensions such as human dignity, privacy, health, and environmental protection. The study underscores the transformative role of judicial interpretation in redefining constitutional guarantees and advancing the cause of justice in India.',
+                'This publication provides a critical analysis of the evolving interpretation of Article 21 of the Indian Constitution in the context of judicial activism. It examines how the judiciary has progressively expanded the ambit of the "right to life and personal liberty" to encompass diverse dimensions such as human dignity, privacy, health, and environmental protection. The study underscores the transformative role of judicial interpretation in redefining constitutional guarantees and advancing the cause of justice in India.',
             Byline:
                 'Ms. Kshama Sharma, Assistant Professor, BDS School of Law, Jagriti Vihar Meerut',
-            icon: '⚖️',
+            image: assets.kshamamam,
         },
         {
             id: 5,
@@ -46,7 +46,7 @@ const Publication = () => {
             description:
                 'This publication analyzes internet shutdowns as human rights violations under international and Indian law. It highlights the conflict between state security measures and fundamental rightssuch as free expression, access to information, and livelihood in a digital society.',
             Byline: 'Ms. Vasvi Bishnoi, Assistant Professor, BDS School of Law',
-            icon: '⚖️',
+            image: assets.vasvimam,
         },
     ];
 
@@ -73,11 +73,12 @@ const Publication = () => {
         <div className="min-h-screen" style={{ backgroundColor: '#FFFBD6' }}>
             {/* Hero Section */}
             <div
-                className="relative h-80 overflow-hidden bg-center"
+                className="relative h-56 sm:h-72 md:h-80 lg:h-[400px] overflow-hidden"
                 style={{
                     backgroundImage: `url(${assets.campus})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center -115px',
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center center",
                 }}
             >
                 <div className="absolute inset-0 bg-opacity-50" />
@@ -121,18 +122,13 @@ const Publication = () => {
                                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-6 sm:p-8"
                             >
                                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
-                                    {/* Icon / Thumbnail */}
-                                    <div
-                                        className={`flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-xl flex items-center justify-center text-3xl sm:text-4xl shadow-md order-1 md:order-1 ${
-                                            publication.type === 'cyber'
-                                                ? 'bg-gradient-to-br from-blue-600 to-blue-800'
-                                                : 'bg-gradient-to-br from-red-600 to-red-800'
-                                        }`}
-                                    >
-                                        <div className="relative">
-                                            <div className="absolute inset-0 bg-white bg-opacity-20 rounded-lg" />
-                                            <span className="relative z-10 drop-shadow-lg">{publication.icon}</span>
-                                        </div>
+                                    {/* Image / Thumbnail */}
+                                    <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-md order-1 md:order-1">
+                                        <img
+                                            src={publication.image}
+                                            alt={publication.title}
+                                            className="w-full h-full object-cover bg-contain"
+                                        />
                                     </div>
 
                                     {/* Content */}

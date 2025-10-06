@@ -29,30 +29,30 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-8 text-center md:text-left">
           <div className="flex flex-col space-y-2">
             <h4 className="font-semibold mb-3 text-lg">Main Menu</h4>
-            <a href="#" className="hover:underline text-base">
+            <Link to="/" className="hover:underline text-base">
               About Us
-            </a>
-            <a href="#" className="hover:underline text-base">
+            </Link>
+            <Link to="/Registration" className="hover:underline text-base">
               Enquire Now
-            </a>
-            <a href="#" className="hover:underline text-base">
+            </Link>
+            <Link to="/contact-us" className="hover:underline text-base">
               Contact Us
-            </a>
-            <a href="#" className="hover:underline text-base">
+            </Link>
+            <Link to="/CampusLife" className="hover:underline text-base">
               Campus
-            </a>
+            </Link>
           </div>
           <div className="flex flex-col space-y-2">
             <h4 className="font-semibold mb-3 text-lg">Explore</h4>
-            <a href="#" className="hover:underline text-base">
-              Learning Skills
-            </a>
-            <a href="#" className="hover:underline text-base">
+            <Link to="/LawyeringSkills" className="hover:underline text-base">
+              Lawyering Skills
+            </Link>
+            <Link to="/TopFaculty" className="hover:underline text-base">
               Top Faculty
-            </a>
-            <a href="#" className="hover:underline text-base">
+            </Link>
+            <Link to="/news-events" className="hover:underline text-base">
               News & Events
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -61,29 +61,27 @@ const Footer = () => {
           <h4 className="font-semibold mb-3 text-lg">Follow Us</h4>
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://www.linkedin.com/showcase/108131302/admin/dashboard/"
+              target='_blank'
               className="hover:text-gray-200 transition-colors text-xl"
             >
               <FaLinkedinIn />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/people/BDS-School-of-Law/61578620593416/"
+              target='_blank'
               className="hover:text-gray-200 transition-colors text-xl"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/bdssl_mrt/?hl=en"
+              target='_blank'
               className="hover:text-gray-200 transition-colors text-xl"
             >
               <FaInstagram />
             </a>
-            <a
-              href="#"
-              className="hover:text-gray-200 transition-colors text-xl"
-            >
-              <FaYoutube />
-            </a>
+           
           </div>
         </div>
       </div>

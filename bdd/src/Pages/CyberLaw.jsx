@@ -19,9 +19,9 @@ const CyberLaw = () => {
       {/* Hero Section */}
       <div
         className="relative bg-cover bg-center h-[40vh] md:h-[50vh] flex items-center justify-center"
-        style={{ backgroundImage: `url(${assets.CyberLaw})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <img src={assets.CyberLaw} alt="Cyber Law Program" className="absolute inset-0 w-full h-full object-cover brightness-50" />
+        <div className="absolute inset-0"></div>
         <h1 className="relative text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center px-4">
           Diploma in Cyber Law
         </h1>

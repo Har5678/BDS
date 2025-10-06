@@ -13,7 +13,7 @@ const approvals = [
     title: "Chaudhary Charan Singh University, Meerut",
     desc: "CCS University, Meerut, U.P. (state university established in 1965), and approved by the Bar Council of India (Statutory body for professional legal education in India).",
     color: "bg-[#142850]",
-    logo: "/ccs-logo.png"
+    logo: assets.Cc
   }
 ];
 

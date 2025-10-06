@@ -17,12 +17,16 @@ const Llb = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div
-        className="relative bg-cover bg-center h-[40vh] md:h-[50vh] flex items-center justify-center"
-        style={{ backgroundImage: `url(${assets.Llb})` }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-        <h1 className="relative text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center px-4">
+      <div className="relative bg-cover bg-center h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+        <img
+          src={assets.llb}
+          alt="Campus Banner"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => console.log('Image failed to load:', e)}
+          onLoad={() => console.log('Image loaded successfully')}
+        />
+        <div className="absolute inset-0 "></div>
+        <h1 className="relative text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center px-4 z-10">
           Bachelor of Laws (LL.B.)
         </h1>
       </div>
@@ -30,7 +34,7 @@ const Llb = () => {
       {/* Main Section */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 md:gap-8 px-4 md:px-12 py-10">
         {/* Mobile Sidebar Toggle */}
-        <div className="md:hidden mb-4 flex justify-start items-center">
+        <div className="md:hidden mb-4 flex justify-start items-center relative">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex items-center gap-2 px-4 py-2 bg-white border rounded-lg shadow-md"
@@ -39,7 +43,7 @@ const Llb = () => {
             <span className="font-medium text-gray-700">Courses</span>
           </button>
           {menuOpen && (
-            <div className="absolute mt-2 w-56 bg-white shadow-lg rounded-lg border border-gray-200 z-20">
+            <div className="absolute top-full mt-2 w-56 bg-white shadow-lg rounded-lg border border-gray-200 z-20">
               <ul className="divide-y divide-gray-200">
                 {courses.map((course) => (
                   <li key={course.id}>
@@ -101,7 +105,7 @@ const Llb = () => {
           </p>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#920C24]">Eligibility & Course Duration</h2>
-          <p><strong>Eligibility:</strong> To be eligible for this program, you must hold a Bachelor’s degree in any discipline from a recognized university.</p>
+          <p><strong>Eligibility:</strong> To be eligible for this program, you must hold a Bachelor's degree in any discipline from a recognized university.</p>
           <p><strong>Course Duration:</strong> This is a full-time, three-year program, structured to provide an in-depth and accelerated learning experience.</p>
 
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#920C24]">Why Pursue LL.B. at BDS School of Law?</h2>

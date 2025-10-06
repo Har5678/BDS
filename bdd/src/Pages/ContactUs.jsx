@@ -93,25 +93,23 @@ const Contact = () => {
               </h3>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/people/BDS-School-of-Law/61578620593416/"
+                  target="_blank"
                   className="p-3 bg-gray-100 rounded-full hover:bg-[#920C24] hover:text-white transition"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
+               
                 <a
-                  href="#"
-                  className="p-3 bg-gray-100 rounded-full hover:bg-[#920C24] hover:text-white transition"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/bdssl_mrt/?hl=en"
+                  target="_blank"
                   className="p-3 bg-gray-100 rounded-full hover:bg-[#920C24] hover:text-white transition"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fshowcase%2F108131302%2Fadmin%2Fdashboard%2F"
+                  target="_blank"
                   className="p-3 bg-gray-100 rounded-full hover:bg-[#920C24] hover:text-white transition"
                 >
                   <Linkedin className="w-5 h-5" />
